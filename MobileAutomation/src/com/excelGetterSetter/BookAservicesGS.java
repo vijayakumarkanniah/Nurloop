@@ -10,7 +10,7 @@ public class BookAservicesGS {
 	private String selectTime;
 	private String selectResident;
 	private String selectStaff;
-	private String notes;
+	private String note;
 	
 	public String getServiceCategory() {
 		return serviceCategory;
@@ -49,10 +49,10 @@ public class BookAservicesGS {
 		this.selectStaff = selectStaff;
 	}
 	public String getNote() {
-		return notes;
+		return note;
 	}
 	public void setNote(String note) {
-		this.notes = note;
+		this.note = note;
 	}
 	
 }

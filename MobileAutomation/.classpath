@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/bson-3.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/extentreports-2.41.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/java-client-4.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/json-20140107.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/json-path-2.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/mongodb-driver-3.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/mongodb-driver-core-3.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/poi-3.10-FINAL.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/selenium-server-standalone-2.53.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/sqlite-jdbc-3.8.11.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/testng-6.8.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/testng-6.8.8-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/VIJAY KUMAR/git/Nurloop/MobileAutomation/lib/xml-path-2.3.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import com.Tring.nbc.utils.Constants;
 import com.Tring.nbc.utils.ExcelReader;
+import com.excelGetterSetter.BookAservicesGS;
 import com.excelGetterSetter.LoginGS;
 import com.urloopWeb.ModuleObjects.BookAserviceWeb_Object;
 import com.urloopWeb.ModuleObjects.LoginWeb_Object;
@@ -22,7 +23,7 @@ public class BookAservicesWebPages {
 	public static ChromeDriver driver;
 	public static Browser browser;
 	public static BookAservicesWebPages bookAservicesWebPages;
-    public static LoginGS loginGS;
+    public static BookAservicesGS bookAservicesGS;
     public static LoginWebPages loginWebPages;
     public static BookAservicesWebScripts bookAservicesWebScripts;
 	
@@ -32,7 +33,7 @@ public class BookAservicesWebPages {
 		bookAserviceWeb_Object=PageFactory.initElements(browser.driver,BookAserviceWeb_Object.class);
 		testDataSheet = ExcelReader.getInstance(Constants.PATHTESTDATA);
 		bookAservicesWebPages = new BookAservicesWebPages();
-		loginGS = new LoginGS();
+		bookAservicesGS = new BookAservicesGS();
 		bookAservicesWebScripts = new BookAservicesWebScripts();
 		loginWebPages = new LoginWebPages();
 		}
@@ -48,6 +49,15 @@ public class BookAservicesWebPages {
 		/*bookAservicesWebPages.setUserName(testDataSheet.getCellValue("inValidCredentials","Login","Username"));
 		bookAservicesWebPages.setPassWord(testDataSheet.getCellValue("inValidCredentials","Login","Password"));*/
 		 /*loginWebScripts.login(loginWeb_Object,loginGS);*/
+		
+		bookAservicesGS.setServiceCategory("");
+		bookAservicesGS.setServiceName("");
+		bookAservicesGS.setSelectDate("");
+		bookAservicesGS.setSelectTime("");
+		bookAservicesGS.setSelectResident("");
+		bookAservicesGS.setSelectStaff("");
+		bookAservicesGS.setNote("");
+		
 		
 		System.out.println("hello1");
 		 bookAservicesWebScripts.bookAservices(bookAserviceWeb_Object);
