@@ -14,54 +14,62 @@ import com.urloopWeb.ModuleObjects.LoginWeb_Object;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.urloopWebScripts.*;
 
-
 public class BookAservicesWebPages {
-	
+
 	public static ExcelReader testDataSheet;
-    public static BookAserviceWeb_Object bookAserviceWeb_Object;
-    public static LoginWebScripts loginWebScripts;
+	public static BookAserviceWeb_Object bookAserviceWeb_Object;
+	public static LoginWebScripts loginWebScripts;
 	public static ChromeDriver driver;
 	public static Browser browser;
 	public static BookAservicesWebPages bookAservicesWebPages;
-    public static BookAservicesGS bookAservicesGS;
-    public static LoginWebPages loginWebPages;
-    public static BookAservicesWebScripts bookAservicesWebScripts;
-	
+	public static BookAservicesGS bookAservicesGS;
+	public static LoginWebPages loginWebPages;
+	public static BookAservicesWebScripts bookAservicesWebScripts;
+
 	@BeforeTest
-	private void configuration(){
+	private void configuration() {
 		bookAserviceWeb_Object = new BookAserviceWeb_Object();
-		bookAserviceWeb_Object=PageFactory.initElements(browser.driver,BookAserviceWeb_Object.class);
+		bookAserviceWeb_Object = PageFactory.initElements(browser.driver, BookAserviceWeb_Object.class);
 		testDataSheet = ExcelReader.getInstance(Constants.PATHTESTDATA);
 		bookAservicesWebPages = new BookAservicesWebPages();
 		bookAservicesGS = new BookAservicesGS();
 		bookAservicesWebScripts = new BookAservicesWebScripts();
 		loginWebPages = new LoginWebPages();
-		}
-	
+	}
+
 	@Test(priority = 1)
-	public void login() throws InterruptedException{
+	public void login() throws InterruptedException {
 		loginWebPages.configuration();
 		loginWebPages.validCredentials();
 	}
-	
+
 	@Test(priority = 2)
-	public void bookAServices() throws InterruptedException{
-		/*bookAservicesWebPages.setUserName(testDataSheet.getCellValue("inValidCredentials","Login","Username"));
-		bookAservicesWebPages.setPassWord(testDataSheet.getCellValue("inValidCredentials","Login","Password"));*/
-		 /*loginWebScripts.login(loginWeb_Object,loginGS);*/
-		
-		bookAservicesGS.setServiceCategory("");
-		bookAservicesGS.setServiceName("");
-		bookAservicesGS.setSelectDate("");
-		bookAservicesGS.setSelectTime("");
-		bookAservicesGS.setSelectResident("");
-		bookAservicesGS.setSelectStaff("");
-		bookAservicesGS.setNote("");
-		
-		
+	public void bookAServices() throws InterruptedException {
+		/*
+		 * bookAservicesWebPages.setUserName(testDataSheet.getCellValue(
+		 * "inValidCredentials","Login","Username"));
+		 * bookAservicesWebPages.setPassWord(testDataSheet.getCellValue(
+		 * "inValidCredentials","Login","Password"));
+		 */
+		/* loginWebScripts.login(loginWeb_Object,loginGS); */
+
+		bookAservicesGS.setServiceCategory(
+				testDataSheet.getCellValue("validBootAServices", "BookAservices", "serviceCategory"));
+		bookAservicesGS
+				.setServiceName(testDataSheet.getCellValue("validBootAServices", "BookAservices", "serviceName"));
+		bookAservicesGS.setSelectDate(testDataSheet.getCellValue("validBootAServices", "BookAservices", "selectDate"));
+		bookAservicesGS
+				.setSelectHours(testDataSheet.getCellValue("validBootAServices", "BookAservices", "selectHours"));
+		bookAservicesGS
+				.setSelectMinutes(testDataSheet.getCellValue("validBootAServices", "BookAservices", "selectMinutes"));
+		bookAservicesGS
+				.setSelectResident(testDataSheet.getCellValue("validBootAServices", "BookAservices", "selectResident"));
+		bookAservicesGS
+				.setSelectStaff(testDataSheet.getCellValue("validBootAServices", "BookAservices", "selectStaff"));
+		bookAservicesGS.setNote(testDataSheet.getCellValue("validBootAServices", "BookAservices", "notes"));
+
 		System.out.println("hello1");
-		 bookAservicesWebScripts.bookAservices(bookAserviceWeb_Object);
+		bookAservicesWebScripts.bookAservices(bookAserviceWeb_Object, bookAservicesGS);
 	}
-			
 
 }

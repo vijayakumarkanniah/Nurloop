@@ -7,11 +7,19 @@ public class BookAservicesGS {
 	private String serviceCategory;
 	private String serviceName;
 	private String selectDate;
-	private String selectTime;
+	private String selectHours;
 	private String selectResident;
 	private String selectStaff;
 	private String note;
+	private String SelectMinutes;
 	
+	
+	public String getSelectMinutes() {
+		return SelectMinutes;
+	}
+	public void setSelectMinutes(String selectMinutes) {
+		SelectMinutes = selectMinutes;
+	}
 	public String getServiceCategory() {
 		return serviceCategory;
 	}
@@ -30,11 +38,11 @@ public class BookAservicesGS {
 	public void setSelectDate(String selectDate) {
 		this.selectDate = selectDate;
 	}
-	public String getSelectTime() {
-		return selectTime;
+	public String getSelectHours() {
+		return selectHours;
 	}
-	public void setSelectTime(String selectTime) {
-		this.selectTime = selectTime;
+	public void setSelectHours(String selectHours) {
+		this.selectHours = selectHours;
 	}
 	public String getSelectResident() {
 		return selectResident;
