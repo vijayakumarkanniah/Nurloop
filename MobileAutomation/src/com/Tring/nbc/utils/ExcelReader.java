@@ -80,10 +80,10 @@ public final class ExcelReader {
 
 		final Map<String, String> rowData = getSheetData(rownum, sheetName);
 		if (!rowData.isEmpty()) {
-		    System.out.println(rowData+"re");
+			System.out.println(rowData + "re");
 			return rowData;
 		} else {
-			throw new NullPointerException(rownum + " : doen't exist in "+ sheetName + " sheet");
+			throw new NullPointerException(rownum + " : doen't exist in " + sheetName + " sheet");
 		}
 	}
 
@@ -101,7 +101,7 @@ public final class ExcelReader {
 		if (!rowData.isEmpty()) {
 			return rowData;
 		} else {
-			throw new NullPointerException(tcID + " : doen't exist in "+ sheetName + " sheet");
+			throw new NullPointerException(tcID + " : doen't exist in " + sheetName + " sheet");
 		}
 	}
 
@@ -149,15 +149,19 @@ public final class ExcelReader {
 			logger.info(" Value for :" + column + " is " + rowData.get(column));
 			return rowData.get(column);
 		} else {
-			throw new NullPointerException(rownum + " : doen't exist in "+ sheetName + " sheet");
+			throw new NullPointerException(rownum + " : doen't exist in " + sheetName + " sheet");
 		}
 	}
 
 	/**
 	 * Returns cell value for the given Testlink ID, sheetName and column value.
-	 * @param tcID - Testlink ID
-	 * @param sheetName - Sheet Name to read
-	 * @param column - Column name to fetch data
+	 * 
+	 * @param tcID
+	 *            - Testlink ID
+	 * @param sheetName
+	 *            - Sheet Name to read
+	 * @param column
+	 *            - Column name to fetch data
 	 * @return String
 	 */
 	public String getCellValue(String tcID, String sheetName, String column) {
@@ -166,7 +170,7 @@ public final class ExcelReader {
 			logger.info(" Value for :" + column + " is " + rowData.get(column));
 			return rowData.get(column);
 		} else {
-			throw new NullPointerException(tcID + " : doen't exist in "+ sheetName + " sheet");
+			throw new NullPointerException(tcID + " : doen't exist in " + sheetName + " sheet");
 		}
 	}
 
@@ -219,8 +223,7 @@ public final class ExcelReader {
 				rowData.add(value.toString());
 			} else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 				rowData.add(cell.getStringCellValue());
-			} else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN
-					|| cell.getCellType() == Cell.CELL_TYPE_ERROR
+			} else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN || cell.getCellType() == Cell.CELL_TYPE_ERROR
 					|| cell.getCellType() == Cell.CELL_TYPE_FORMULA) {
 				throw new RuntimeException(" Cell Type is not supported ");
 			}
@@ -254,8 +257,7 @@ public final class ExcelReader {
 			if (tcID.equalsIgnoreCase(testLinkID)) {
 				for (int j = firstCellNum; j < lastCellNum; j++) {
 					final HSSFCell cell = rows.getCell(j);
-					if (cell == null
-							|| cell.getCellType() == Cell.CELL_TYPE_BLANK) {
+					if (cell == null || cell.getCellType() == Cell.CELL_TYPE_BLANK) {
 						rowData.add("");
 					} else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 						final Double val = cell.getNumericCellValue();
@@ -263,11 +265,11 @@ public final class ExcelReader {
 						rowData.add(value.toString());
 					} else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 						rowData.add(cell.getStringCellValue());
-					} else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN
-							|| cell.getCellType() == Cell.CELL_TYPE_ERROR
+					} else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN) {
+						rowData.add(String.valueOf(cell.getBooleanCellValue()));
+					} else if (cell.getCellType() == Cell.CELL_TYPE_ERROR
 							|| cell.getCellType() == Cell.CELL_TYPE_FORMULA) {
-						throw new RuntimeException(
-								" Cell Type is not supported ");
+						throw new RuntimeException(" Cell Type is not supported ");
 					}
 					rowVal.put(coulmnNames.get(j), rowData.get(j).trim());
 				}
@@ -295,6 +297,5 @@ public final class ExcelReader {
 		}
 		return columnValues;
 	}
-
 
 }
