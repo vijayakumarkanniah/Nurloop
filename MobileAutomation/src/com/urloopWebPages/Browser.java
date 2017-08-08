@@ -13,11 +13,11 @@ public class Browser {
 		if (browser == "Chrome") {
 
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\VIJAY KUMAR\\workspace_new\\MobileAutomation\\MobileAutomation\\resources\\browsers\\chromedriver.exe");
+					"C:\\Users\\ADMIN\\git\\Nurloop\\MobileAutomation\\resources\\browsers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			/* driver.manage().window().maximize(); */
 			driver.manage().window().maximize();
-			driver.get("https://urloop-dev-1.appspot.com");
+			driver.get("http://urloop-testing.appspot.com/");
 
 		}
 		/* return driver; */
