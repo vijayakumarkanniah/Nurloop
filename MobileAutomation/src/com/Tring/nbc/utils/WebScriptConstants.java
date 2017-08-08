@@ -20,7 +20,133 @@ public interface WebScriptConstants {
 	String DESCRIPTION = ".//*[@id='description']";
 	String SAVE_MODAL = ".//*[@id='modal-box']/div[2]/md-content/form/div[7]/div[2]/a[2]/button/span[text()='Save']";
 	String SELECTED_STAFF = ".//*[@class='selectBox-values']/div[text()='%s']";
+	/* Book a service */
+	/*Service */
 	
+	String SERVICESMAINMENU = ".//*[@id='side-menu']/li[4]/a/span[text()='Services']";
+	String CREATE_A_NEW_SERVICE = ".//*[@id='btn-create']";
+	
+	
+	/*ROOM SERVICES*/
+	String ROOMSERVICE = ".//*[@id='services']/div[2]/div/div/div[2]/div/div[1]/a/div";
+	String ROOMSERVICEHOVER = ".//*[@id='services']/div[2]/div/div/div[2]/div/div[1]/a/div/div/div[text()='Edit Service']";
+	String ROOMNAME = ".//*[@id='roomName']";
+	String ROOMRENTPRICE = ".//*[@id='price']";
+	String ROOMDESCRIPTION = ".//*[@id='description']";
+	String SAVERENTOPTION = ".//*[@id='rentalformsave'][text()='Save Rent Option']";
+	String SAVE = ".//*[@id='btn-save'][text()='Save']";
+	/*ROOM SERVICES*/
+	
+	/*Boarding Services*/
+	
+	String BOARDINGSERVICE = ".//*[@id='services']/div[2]/div/div/div[2]/div/div[2]/a/div";
+	String BOARDINGSERVICEHOVER = ".//*[@id='services']/div[2]/div/div/div[2]/div/div[2]/a/div/div/div[text()='Edit Service']";
+	String BOARDINGPACKAGENAME =".//*[@id='packageName']";
+	String BOARDINGPACKAGEPRICE =".//*[@id='packageprice']";
+	String BOARDINGSELECTSERVICEFIELD =".//*[@aria-label='Select Service*']";
+	/*HardCoded*/
+	String BOARDINGSELECTSERVICEVALUE =".//*[@value=170]";
+	/*HardCoded*/
+	String BOARDINGSELECTQUANTITYFIELD =".//*[@aria-label='Quantity*']";
+	String BOARDINGSELECTQUANTITYVALUE =".//*[@class='md-text ng-binding'][text()=%s]";
+	String BOARDINGSELECTOCCURRENCEFIELD =".//*[@id='select_value_label_2']";
+	String BOARDINGSELECTOCCURRENCEVALUE = ".//*[@value='%s']/div";
+	String BOARDINGMEALVOUCHERSFIELD =".//*[@id='mealVouchers']";
+	String BOARDINGMEALVOUCHERSPERDAYFIELD =".//*[@id='voucherPerDay']";
+	String BOARDINGMEALPRICEPERVOUCHERS =".//*[@id='pricePerVoucher']";
+	String BOARDINGSAVEPACKAGE =".//*[@id='packageformsave']";
+	String BOARDINGGLOBALSAVE =".//*[@id='btn-save']";
+	String BOARDINGGLOBALHTML ="html/body/md-backdrop";
+	/*Boarding Services*/
+	
+	/*Service Creation*/
+	String SERVICENAME = ".//*[@id='serviceName']";
+	String SERVICECATEGORYFIELD = ".//*[@id='categoryId']";
+	String SERVICECATEGORYSELECTION = ".//*[@id='select-options-categoryId']/ul/li[text()='%s']";
+	String SERVICEDURATION = ".//*[@id='taskDuration']";
+	String SERVICEMINUTESORHOURSFIELD = ".//*[@id='taskDurationUnit']";
+	String SERVICEMINUTESORHOURSSELECTIONMINUTES = ".//*[@id='select-options-taskDurationUnit']/ul/li[1]";
+	String SERVICEMINUTESORHOURSSELECTIONHOURS = ".//*[@id='select-options-taskDurationUnit']/ul/li[2]";
+	String SERVICESERVICETEAMFIELD = ".//*[@id='executionTeamId']";		
+	String SERVICESERVICETEAM = ".//*[@value='%s']";
+	String SERVICEDESCRIPTION= ".//*[@id='description']";
+	String SERVICEONDEMANDBOOLEAN= ".//*[@id='servicecreate']/div[2]/div/div/div[2]/div[2]/div/div/form/div[4]/md-checkbox/div[2]/span[1]";
+	String SERVICE_ONDEMAND_BOOLEANBASECOST_PRICE= ".//*[@id='baseCostPrice']";
+	String SERVICE_ONDEMAND_BOOLEAN_BASEBILLABLE_PRICE= ".//*[@id='basebillablePrice']";
+	String SERVICE_DAILY_BASE_COST_PRICE= ".//*[@id='dailyCostPricev']";
+	String SERVICE_DAILY_BASE_BILLABLE_PRICE= ".//*[@id='dailyBillablePrice']";
+	String SERVICE_WEEKLY_BASE_COST_PRICE= ".//*[@id='weeklyCostPrice']";
+	String SERVICE_WEEKLY_BASE_BILLABLE_PRICE= ".//*[@id='weeklyBillablePrice']";
+	String SERVICE_MONTH_BASE_COST_PRICE= ".//*[@id='monthlyCostPrice']";
+	String SERVICE_MONTH_BASE_BILLABLE_PRICE= ".//*[@id='monthlyBillablePrice']";
+	/*Service Creation*/
+	
+	String SERVICE_BREAD_CRUMS=".//*[@id='page-wrapper']/div/ol";
+	/*Service */
+	
+	/*Resident*/
+	String RESIDENT_MAINMENU=".//*[@id='side-menu']/li[5]/a['Residents']";
+	String RESIDENT_CREATEBUTTON=".//*[@id='residents']/div[1]/div[2]/div/a/button/span['Add New Resident']";
+	String RESIDENT_FIRSTNAME_FIELD=".//*[@ng-model='residentfirstname']";
+	String RESIDENT_LASTNAME_FIELD=".//*[@ng-model='residentlastname']";
+	String RESIDENT_GENDER_VALUE=".//*[@value='%s']";
+	String RESIDENT_DOB=".//*[@value='%s']";
+	String RESIDENT_EMAIL=".//*[@ng-value='residentemail']";
+	String RESIDENT_COUNTRY=".//*[@value='%s']";
+	String RESIDENT_PHONE=".//*[@name='residentcellphone']";
+	String RESIDENT_ADDRESS_1=".//*[@ng-value='rc.address1']";
+	String RESIDENT_ADDRESS_2=".//*[@ng-value='rc.address2']";
+	String RESIDENT_BIO=".//*[@ng-model='residentbio']";
+	String RESIDENT_SAVE=".//*[@id='residentcreate']/div[2]/div[2]/a['Save']";
+	/*Resident*/
+	
+	/*Staff*/
+	String STAFF_MAINMENU=".//*[@id='side-menu']/li[8]/a/span['Staff']";
+	String STAFF_CREATEBUTTON=".//*[@id='staff']/div[1]/div[2]/div/a[2]/button/span['Add New Staff']";
+	String STAFF_FIRSTNAME=".//*[@name='stafffirstname']";
+	String STAFF_LASTNAME=".//*[@name='stafflastname']";
+	String STAFF_GENDER=".//*[@value='%s']";
+	String STAFF_EMAIL=".//*[@name='staffemail']";
+	String STAFF_COUNTRYCODE=".//*[@value='%s']";
+	String STAFF_CELLPHONE=".//*[@name='staffcellphone']";
+	String STAFF_BIO=".//*[@name='staffbio']";
+	/*HARDCODED*/
+	String STAFF_SERVICETEAM=".//*[@value='69']";
+	/*HARDCODED*/
+	String STAFF_WORKINGHOURS_SUNDAY_STARTTIME=".//*[@id='Staff-workinghours']/div[1]/div[2]/div/md-input-container/input";
+	String STAFF_WORKINGHOURS_SUNDAY_ENDTIME=".//*[@id='Staff-workinghours']/div[1]/div[3]/div/md-input-container/input";
+	String STAFF_PASSWORD=".//*[@id='gen-pwd']";
+	String STAFF_INPUT_2_1 = "html/body/div[6]/table/tbody/tr[2]/td[1]/input";
+	String STAFF_INPUT_2_3 = "html/body/div[6]/table/tbody/tr[2]/td[3]/input";
+	String STAFF_SAVE =".//*[@id='staffcreate']/div[1]/div[2]/a['Save']";
+	/*Staff*/
+	
+	/*CareAssessment*/
+	String CAREASSESSMENT_MENU =".//*[@id='side-menu']/li[6]/a/span['Care Assessments']";
+	String CREATE_CAREASSESSMENT_BUTTON =".//*[@id='btn-create']/span['Create New Assessment']";
+	String CAREASSESSMENT_TITLE_NAME =".//*[@id='formtitlename']";
+	String CAREASSESSMENT_QUESTIONTYPE_FILED =".//*[@id='cacreate']/div[2]/div/div/div[3]/div/form/div/div[1]/div[1]/div[2]/div/select";
+	String CAREASSESSMENT_QUESTIONTYPE_FILED_SINGLE_CHOICE ="//option[contains(@value,'radio')]";
+	String CAREASSESSMENT_SERVICE_NAME_FIELD =".//*[@id='cacreate']/div[2]/div/div/div[3]/div/form/div/div[1]/div[2]/div[2]/div/select";
+	String CAREASSESSMENT_SERVICE_NAME_FIELD_VALUE="//option[contains(.,'None')]";
+	String CAREASSESSMENT_QUESTION_TITLE=".//*[@id='cacreate']/div[2]/div/div/div[3]/div/form/div/div[1]/div[3]/div[2]/input";
+	String CAREASSESSMENT_ANSWER_1=".//*[@id='questAns1']";
+	String CAREASSESSMENT_ANSWER_SAVE=".//*[@id='cacreate']/div[2]/div/div/div[3]/div/form/div/div[4]/div[text()='Save Question']";
+	String CAREASSESSMENT_SAVE=".//*[@id='cacreate']/div[1]/div[2]/div/a[text()='Save']";
+	/*CareAssessment*/
+	
+	/*Groups*/
+	String GROUPS_MAIN_MENU = ".//*[@id='side-menu']/li[2]/a/span[text()='Groups'";
+	String GROUPS_CREATE_GROUP =".//*[@id='groups']/div[1]/div[2]/div/a/button/span[text()='Create New Group']";
+	String GROUPS_ADD_IMAGE =".//*[@id='fileinfo']/a[text()='Add Image']";
+	String GROUPS_NAME =".//*[@name='groupname']";
+	String GROUPS_RADIO_STAFF =".//*[@value='staff']";
+	String GROUPS_RADIO_RESIDENT =".//*[@value='resident']";
+	String GROUPS_RADIO_EVERYONE =".//*[@value='everyone']";
+	String GROUPS_RADIO_DESCRIPTION =".//*[@id='description']";
+	String GROUPS_SAVE_BUTTON =".//*[@id='groupcreate']/div[1]/div[2]/a[text()='Save']";
+	/*Groups*/
+
 /*Events */
 	
 	String EVENTS=".//*[@id='side-menu']/li[3]/a/span[text()='Events']";
@@ -67,5 +193,6 @@ public interface WebScriptConstants {
 	String UNASSIGNED_SELECTSTAFF1=".//*[@value='Charlie Harper']";
 	String UNASSIGNED_SAVEBUTTON=".//*[@id='btn-save'][text()='Save']";
 	String UNASSIGNED_SERVICEDATE=".//*[@ class='md-input ng-pristine ng-untouched ng-valid hasDatepicker ng-not-empty']";
-    
+
+	
 }
