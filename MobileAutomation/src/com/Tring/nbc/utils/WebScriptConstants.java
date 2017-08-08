@@ -147,7 +147,7 @@ public interface WebScriptConstants {
 	String GROUPS_SAVE_BUTTON =".//*[@id='groupcreate']/div[1]/div[2]/a[text()='Save']";
 	/*Groups*/
 
-	/*Events */
+/*Events */
 	
 	String EVENTS=".//*[@id='side-menu']/li[3]/a/span[text()='Events']";
 	String CREATENEW_EVENT=".//*[@id='events']/div[1]/div[2]/div/a/button";
