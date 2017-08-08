@@ -15,4 +15,7 @@ public class LoginWeb_Object {
 	
 	@FindBy(id="btn-login")
 	public WebElement LoginClick;
+	
+	@FindBy(id="prab")
+	public WebElement Deleted;
 }

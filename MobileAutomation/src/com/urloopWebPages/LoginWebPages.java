@@ -1,5 +1,7 @@
 package com.urloopWebPages;
 
+import java.io.FileNotFoundException;
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -26,14 +28,14 @@ public class LoginWebPages {
 	}
 
 	@Test(priority = 1)
-	public void inValidCredentials() throws InterruptedException {
+	public void inValidCredentials() throws InterruptedException, FileNotFoundException {
 		loginGS.setUserName(testDataSheet.getCellValue("inValidCredentials", "Login", "Username"));
 		loginGS.setPassWord(testDataSheet.getCellValue("inValidCredentials", "Login", "Password"));
 		LoginWebScripts.login(loginWeb_Object, loginGS);
 	}
 
 	@Test(priority = 2)
-	public void validCredentials() throws InterruptedException {
+	public void validCredentials() throws InterruptedException, FileNotFoundException {
 		loginGS.setUserName(testDataSheet.getCellValue("ValidCredentials", "Login", "Username"));
 		loginGS.setPassWord(testDataSheet.getCellValue("ValidCredentials", "Login", "Password"));
 		LoginWebScripts.login(loginWeb_Object, loginGS);

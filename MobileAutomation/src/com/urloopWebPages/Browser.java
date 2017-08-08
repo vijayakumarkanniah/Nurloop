@@ -17,7 +17,7 @@ public class Browser {
 			driver = new ChromeDriver();
 			/* driver.manage().window().maximize(); */
 			driver.manage().window().maximize();
-			driver.get("https://urloop-dev-1.appspot.com");
+			driver.get("https://urloop-testing.appspot.com/");
 
 		}
 		/* return driver; */

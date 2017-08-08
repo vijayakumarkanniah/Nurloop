@@ -1,5 +1,7 @@
 package com.urloopWebPages;
 
+import java.io.FileNotFoundException;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
@@ -35,7 +37,7 @@ public class BookAservicesWebPages {
 	}
 
 	@Test(priority = 1)
-	public void login() throws InterruptedException {
+	public void login() throws InterruptedException, FileNotFoundException {
 		loginWebPages.configuration();
 		loginWebPages.validCredentials();
 	}
