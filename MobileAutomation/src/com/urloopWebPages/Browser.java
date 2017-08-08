@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Browser {
 
 	public static ChromeDriver driver;
-
 	public static void /* ChromeDriver */ browserDriver(String browser) {
 
 		if (browser == "Chrome") {

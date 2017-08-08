@@ -1,6 +1,7 @@
 package com.Tring.nbc.utils;
 
 public interface WebScriptConstants {
+	
 	/* Book a service */
 	String SELECT_BOX = ".//*[@class='selectBox-values']/div[text()='%s']";
 	String TIME_PICKER = ".//*[@id='timepicker']";
