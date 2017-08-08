@@ -13,7 +13,7 @@ public class Browser {
 		if (browser == "Chrome") {
 
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\VIJAY KUMAR\\workspace_new\\MobileAutomation\\MobileAutomation\\resources\\browsers\\chromedriver.exe");
+					"resources/browsers/chromedriver.exe");
 			driver = new ChromeDriver();
 			/* driver.manage().window().maximize(); */
 			driver.manage().window().maximize();

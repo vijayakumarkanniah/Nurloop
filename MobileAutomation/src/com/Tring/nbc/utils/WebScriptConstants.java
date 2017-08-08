@@ -21,7 +21,6 @@ public interface WebScriptConstants {
 	String SAVE_MODAL = ".//*[@id='modal-box']/div[2]/md-content/form/div[7]/div[2]/a[2]/button/span[text()='Save']";
 	String SELECTED_STAFF = ".//*[@class='selectBox-values']/div[text()='%s']";
 	/* Book a service */
-	
 	/*Service */
 	
 	String SERVICESMAINMENU = ".//*[@id='side-menu']/li[4]/a/span[text()='Services']";
