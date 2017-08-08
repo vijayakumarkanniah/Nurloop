@@ -13,7 +13,7 @@ public class Browser {
 		if (browser == "Chrome") {
 
 			System.setProperty("webdriver.chrome.driver",
-					"resources/browsers/chromedriver.exe");
+					"C:\\Users\\ADMIN\\git\\Nurloop\\MobileAutomation\\resources\\browsers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			/* driver.manage().window().maximize(); */
 			driver.manage().window().maximize();
