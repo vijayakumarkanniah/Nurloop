@@ -7,7 +7,6 @@ public interface WebScriptConstants {
 	String INPUT_2_1 = "html/body/div[6]/table/tbody/tr[2]/td[1]/input";
 	String INPUT_2_3 = "html/body/div[6]/table/tbody/tr[2]/td[3]/input";
 	String DATE_PICKER = ".//*[@id='ui-datepicker-div']";
-	
 	String CARE_ASSESMENT_BUTTON = ".//*[@id='careAssessment']/div/div[1]/div[2]/div/button";
 	String CATEGORY_INPUT = ".//*[@id='category']/div/input";
 	String SERVICE_CATEGORY = ".//*[@class='selectBox-values']/div[text()='%s']";
@@ -127,6 +126,15 @@ public interface WebScriptConstants {
 	String CAREASSESSMENT_TITLE_NAME =".//*[@id='formtitlename']";
 	String CAREASSESSMENT_QUESTIONTYPE_FILED =".//*[@id='cacreate']/div[2]/div/div/div[3]/div/form/div/div[1]/div[1]/div[2]/div/select";
 	String CAREASSESSMENT_QUESTIONTYPE_FILED_SINGLE_CHOICE ="//option[contains(@value,'radio')]";
+	
+	String CAREASSESSMENT_QUESTIONTYPE_FILED_MULTIPLE_CHOICE ="//option[contains(@value,'multiple')]";
+	
+	String CAREASSESSMENT_QUESTIONTYPE_FILED_TEXT_CHOICE ="//option[contains(@value,'text')]";
+	
+	
+	
+	
+	
 	String CAREASSESSMENT_SERVICE_NAME_FIELD =".//*[@id='cacreate']/div[2]/div/div/div[3]/div/form/div/div[1]/div[2]/div[2]/div/select";
 	String CAREASSESSMENT_SERVICE_NAME_FIELD_VALUE="//option[contains(.,'None')]";
 	String CAREASSESSMENT_QUESTION_TITLE=".//*[@id='cacreate']/div[2]/div/div/div[3]/div/form/div/div[1]/div[3]/div[2]/input";
@@ -194,5 +202,6 @@ public interface WebScriptConstants {
 	String UNASSIGNED_SAVEBUTTON=".//*[@id='btn-save'][text()='Save']";
 	String UNASSIGNED_SERVICEDATE=".//*[@ class='md-input ng-pristine ng-untouched ng-valid hasDatepicker ng-not-empty']";
 
+	/* Unassigned Services*/
 	
 }
