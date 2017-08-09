@@ -1,5 +1,7 @@
 package com.urloopWebPages;
 
+import java.io.FileNotFoundException;
+
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.PageFactory;
@@ -27,7 +29,7 @@ public class UnassignedWebPages {
 	}
 	
 	@Test(priority=1)
-	public void login() throws InterruptedException
+	public void login() throws InterruptedException, FileNotFoundException
 	{
 		LoginWebPages loginWebPages = new LoginWebPages();
 		loginWebPages.configuration();
