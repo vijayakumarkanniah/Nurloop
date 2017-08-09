@@ -204,7 +204,6 @@ Thread.sleep(5000);
 		/*Attachment*/
 		
 
-		
 		Browser.findElementByPath(".//*[@id='gp-create-post-modal-box']/div/div[3]/a/button[text()='Post']")
 		.click();
 		
