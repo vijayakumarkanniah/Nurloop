@@ -53,6 +53,9 @@ public class CareAssessmentWebPages {
 				testDataSheet.getCellValue("CareAssessment_Creation", "CareAssessment", "QuestionTitle"));
 		careAssessmentGS.setQuestionAnswer1(
 				testDataSheet.getCellValue("CareAssessment_Creation", "CareAssessment", "Answer1"));
+		careAssessmentGS.setQuestionType(
+				testDataSheet.getCellValue("CareAssessment_Creation", "CareAssessment", "Question Type"));
+		
 		careAssessmentWebScripts.createAssessment(careAssessmentGS);
 	}
 }

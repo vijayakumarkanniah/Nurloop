@@ -5,7 +5,14 @@ public class CareAssessmentGS {
 	private String templateName;
 	private String questionTitle;
 	private String questionAnswer1;
+	private String questionType;
 	
+	public String getQuestionType() {
+		return questionType;
+	}
+	public void setQuestionType(String questionType) {
+		this.questionType = questionType;
+	}
 	public String getTemplateName() {
 		return templateName;
 	}
