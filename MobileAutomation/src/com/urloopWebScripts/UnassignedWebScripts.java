@@ -6,7 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import com.Tring.nbc.utils.WebScriptConstants;
+import webScriptsConstants.UnassignedWebScriptsConstants;
+import webScriptsConstants.BookaserviceWebScriptsConstants;
 import com.excelGetterSetter.UnassignedGS;
 import com.urloopWebPages.Browser;
 import com.urloopWebScripts.LoginWebScripts;
@@ -19,40 +20,40 @@ public class UnassignedWebScripts {
 	public void Unassignedtimeonly(UnassignedGS unassignedGS) throws InterruptedException {
 		
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SERVICESMENU).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SERVICESMENU).click();
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_ONDEMANDTAB).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_ONDEMANDTAB).click();
 		Thread.sleep(10000);
 
 		
-		System.out.println(Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMELABEL).getText());
+		System.out.println(Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMELABEL).getText());
 		
-		if(Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMELABEL).getText().equals("09:00 AM"))
+		if(Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMELABEL).getText().equals("09:00 AM"))
 		{
 		
 		Thread.sleep(5000);	
-		WebElement web_Element_To_Be_Hovered = Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMELABEL);
+		WebElement web_Element_To_Be_Hovered = Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMELABEL);
 		Actions builder = new Actions(Browser.driver);
 		builder.moveToElement(web_Element_To_Be_Hovered).build().perform();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SCHEDULEBUTTON).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SCHEDULEBUTTON).click();
 		Thread.sleep(15000);
 		
 		//Select time from the time picker
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMEPICKER).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMEPICKER).click();
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_HOUR).click();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_HOUR).clear();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_HOUR).sendKeys(unassignedGS.getHour());
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_HOUR).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_HOUR).clear();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_HOUR).sendKeys(unassignedGS.getHour());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_MINUTES).click();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_MINUTES).clear();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_MINUTES).sendKeys(unassignedGS.getMinutes());
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_MINUTES).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_MINUTES).clear();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_MINUTES).sendKeys(unassignedGS.getMinutes());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_STAFFDROPDOWN).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_STAFFDROPDOWN).click();
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SELECTSTAFF).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SELECTSTAFF).click();
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SAVEBUTTON).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SAVEBUTTON).click();
 		Thread.sleep(10000);
 		
 		
@@ -64,27 +65,27 @@ public class UnassignedWebScripts {
 	public void UnassignedDateandtime(UnassignedGS unassignedGS) throws InterruptedException
 	{
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SERVICESMENU).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SERVICESMENU).click();
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_ONDEMANDTAB).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_ONDEMANDTAB).click();
 		
 		Thread.sleep(15000);
 		
-		System.out.println(Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMELABEL1).getText());
+		System.out.println(Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMELABEL1).getText());
 		
-		if(Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMELABEL1).getText().equals("08:00 AM"))
+		if(Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMELABEL1).getText().equals("08:00 AM"))
 		{
 		
 		Thread.sleep(5000);	
-		WebElement web_Element_To_Be_Hovered = Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMELABEL1);
+		WebElement web_Element_To_Be_Hovered = Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMELABEL1);
 		Actions builder = new Actions(Browser.driver);
 		builder.moveToElement(web_Element_To_Be_Hovered).build().perform();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SCHEDULEBUTTON).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SCHEDULEBUTTON).click();
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SERVICEDATE).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SERVICEDATE).click();
 		Thread.sleep(5000);
-		WebElement datepick = Browser.findElementByPath(WebScriptConstants.DATE_PICKER);
-		List<WebElement> noOfColumns = datepick.findElements(By.tagName(WebScriptConstants.TD));
+		WebElement datepick = Browser.findElementByPath(BookaserviceWebScriptsConstants.DATE_PICKER);
+		List<WebElement> noOfColumns = datepick.findElements(By.tagName(BookaserviceWebScriptsConstants.TD));
 		// Loop will rotate till expected date not found.
 		for (WebElement cell : noOfColumns) {
 			// Select the date from date picker when condition match.
@@ -96,21 +97,21 @@ public class UnassignedWebScripts {
 			
 		Thread.sleep(10000);
 		//Select time from the time picker
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_TIMEPICKER).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_TIMEPICKER).click();
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_HOUR).click();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_HOUR).clear();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_HOUR).sendKeys(unassignedGS.getHour());
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_HOUR).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_HOUR).clear();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_HOUR).sendKeys(unassignedGS.getHour());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_MINUTES).click();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_MINUTES).clear();
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_MINUTES).sendKeys(unassignedGS.getMinutes());
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_MINUTES).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_MINUTES).clear();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_MINUTES).sendKeys(unassignedGS.getMinutes());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_STAFFDROPDOWN).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_STAFFDROPDOWN).click();
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SELECTSTAFF1).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SELECTSTAFF1).click();
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.UNASSIGNED_SAVEBUTTON).click();
+		Browser.findElementByPath(UnassignedWebScriptsConstants.UNASSIGNED_SAVEBUTTON).click();
 		Thread.sleep(10000);
 		
 		

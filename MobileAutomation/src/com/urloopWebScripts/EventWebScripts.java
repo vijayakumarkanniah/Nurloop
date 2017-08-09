@@ -10,7 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.excelGetterSetter.EventGS;
-import com.Tring.nbc.utils.WebScriptConstants;
+import webScriptsConstants.EventsWebScriptsConstants;
+import webScriptsConstants.BookaserviceWebScriptsConstants;
 import com.urloopWeb.ModuleObjects.EventWeb_Object;
 
 import com.urloopWebPages.Browser;
@@ -22,17 +23,17 @@ public class EventWebScripts {
 	public void EmptyEvent() throws InterruptedException {
 
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.EVENTS).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENTS).click();
 		Thread.sleep(10000);
-		Browser.findElementByPath(WebScriptConstants.CREATENEW_EVENT).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.CREATENEW_EVENT).click();
 		Thread.sleep(10000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_SAVE).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_SAVE).click();
 		/*
 		 * String
-		 * Toast=Browser.findElementByPath(WebScriptConstants.Toast_message).
+		 * Toast=Browser.findElementByPath(EventsWebScriptsConstants.Toast_message).
 		 * getText(); System.out.println("Toast Message is:"+Toast);
 		 */
-		if (Browser.findElementByPath(WebScriptConstants.TOAST_MESSAGE).getText()
+		if (Browser.findElementByPath(EventsWebScriptsConstants.TOAST_MESSAGE).getText()
 				.equals("Please fill the mandatory fields")) {
 
 			System.out.println("EmptyEvent - Test Case Pass");
@@ -77,13 +78,13 @@ public class EventWebScripts {
 		JavascriptExecutor jseg = (JavascriptExecutor) Browser.driver;
 		jseg.executeScript("scroll(0,250);");
 		Thread.sleep(10000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).click();
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_DATE).click();
+		Browser.findElementByPath(BookaserviceWebScriptsConstants.EVENT_DATE).click();
 		Thread.sleep(5000);
-		WebElement datepick = Browser.findElementByPath(WebScriptConstants.DATE_PICKER);
-		List<WebElement> noOfColumns = datepick.findElements(By.tagName(WebScriptConstants.TD));
+		WebElement datepick = Browser.findElementByPath(BookaserviceWebScriptsConstants.DATE_PICKER);
+		List<WebElement> noOfColumns = datepick.findElements(By.tagName(BookaserviceWebScriptsConstants.TD));
 		// Loop will rotate till expected date not found.
 		for (WebElement cell : noOfColumns) {
 			// Select the date from date picker when condition match.
@@ -95,25 +96,25 @@ public class EventWebScripts {
 			
 		//Start time value setting
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.STARTTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.STARTTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getStart_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getStart_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getStart_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getStart_minute());
 			Thread.sleep(5000);
 			
 		//End time value setting	
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.ENDTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.ENDTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getEnd_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getEnd_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
-			Browser.findElementByPath(WebScriptConstants.WHO_IS_PARTICIPATING).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.WHO_IS_PARTICIPATING).click();
 			Thread.sleep(5000);
 
 			//Based on the input from excel to select whether staff/res/everyone
@@ -138,12 +139,12 @@ public class EventWebScripts {
 			
 			jseg.executeScript("scroll(0,50);");
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).click();
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
 			
 			jseg.executeScript("scroll(0,-450);");
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_SAVE).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_SAVE).click();
 
 		
 	}
@@ -152,18 +153,18 @@ public class EventWebScripts {
 	public void ValidEvent_Resident(EventWeb_Object eventwebobject, EventGS eventGS) throws Exception{
 
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.CREATENEW_EVENT).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.CREATENEW_EVENT).click();
 		Thread.sleep(10000);
 		JavascriptExecutor jsed = (JavascriptExecutor) Browser.driver;
 		jsed.executeScript("scroll(0,250);");
 		Thread.sleep(10000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).click();
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_DATE).click();
+		Browser.findElementByPath(BookaserviceWebScriptsConstants.EVENT_DATE).click();
 		Thread.sleep(5000);
-		WebElement datepick = Browser.findElementByPath(WebScriptConstants.DATE_PICKER);
-		List<WebElement> noOfColumns = datepick.findElements(By.tagName(WebScriptConstants.TD));
+		WebElement datepick = Browser.findElementByPath(BookaserviceWebScriptsConstants.DATE_PICKER);
+		List<WebElement> noOfColumns = datepick.findElements(By.tagName(BookaserviceWebScriptsConstants.TD));
 		// Loop will rotate till expected date not found.
 		for (WebElement cell : noOfColumns) {
 			// Select the date from date picker when condition match.
@@ -175,25 +176,25 @@ public class EventWebScripts {
 			
 		//Start time value setting
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.STARTTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.STARTTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getStart_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getStart_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getStart_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getStart_minute());
 			Thread.sleep(5000);
 			
 		//End time value setting	
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.ENDTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.ENDTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getEnd_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getEnd_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
-			Browser.findElementByPath(WebScriptConstants.WHO_IS_PARTICIPATING).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.WHO_IS_PARTICIPATING).click();
 			Thread.sleep(5000);
 
 			//Based on the input from excel to select whether staff/res/everyone
@@ -219,12 +220,12 @@ public class EventWebScripts {
 			
 			jsed.executeScript("scroll(0,50);");
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).click();
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
 			
 			jsed.executeScript("scroll(0,-450);");
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_SAVE).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_SAVE).click();
 			
 		
 	}
@@ -234,18 +235,18 @@ public class EventWebScripts {
 	public void ValidEvent_Everyone(EventWeb_Object eventwebobject, EventGS eventGS) throws Exception{
 
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.CREATENEW_EVENT).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.CREATENEW_EVENT).click();
 		Thread.sleep(10000);
 		JavascriptExecutor jsej = (JavascriptExecutor) Browser.driver;
 		jsej.executeScript("scroll(0,250);");
 		Thread.sleep(10000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).click();
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_DATE).click();
+		Browser.findElementByPath(BookaserviceWebScriptsConstants.EVENT_DATE).click();
 		Thread.sleep(5000);
-		WebElement datepick = Browser.findElementByPath(WebScriptConstants.DATE_PICKER);
-		List<WebElement> noOfColumns = datepick.findElements(By.tagName(WebScriptConstants.TD));
+		WebElement datepick = Browser.findElementByPath(BookaserviceWebScriptsConstants.DATE_PICKER);
+		List<WebElement> noOfColumns = datepick.findElements(By.tagName(BookaserviceWebScriptsConstants.TD));
 		// Loop will rotate till expected date not found.
 		for (WebElement cell : noOfColumns) {
 			// Select the date from date picker when condition match.
@@ -257,25 +258,25 @@ public class EventWebScripts {
 			
 		//Start time value setting
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.STARTTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.STARTTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getStart_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getStart_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getStart_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getStart_minute());
 			Thread.sleep(5000);
 			
 		//End time value setting	
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.ENDTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.ENDTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getEnd_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getEnd_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
-			Browser.findElementByPath(WebScriptConstants.WHO_IS_PARTICIPATING).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.WHO_IS_PARTICIPATING).click();
 			Thread.sleep(5000);
 
 			//Based on the input from excel to select whether staff/res/everyone
@@ -302,12 +303,12 @@ public class EventWebScripts {
 			
 			jsej.executeScript("scroll(0,50);");
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).click();
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
 			
 			jsej.executeScript("scroll(0,-450);");
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_SAVE).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_SAVE).click();
 
 		
 	}
@@ -317,17 +318,17 @@ public class EventWebScripts {
 	public void ValidEvent_Specific(EventWeb_Object eventwebobject, EventGS eventGS) throws Exception{
 
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.CREATENEW_EVENT).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.CREATENEW_EVENT).click();
 		JavascriptExecutor jsez = (JavascriptExecutor) Browser.driver;
 		jsez.executeScript("scroll(0,250);");
 		Thread.sleep(10000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).click();
-		Browser.findElementByPath(WebScriptConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
 		Thread.sleep(5000);
-		Browser.findElementByPath(WebScriptConstants.EVENT_DATE).click();
+		Browser.findElementByPath(BookaserviceWebScriptsConstants.EVENT_DATE).click();
 		Thread.sleep(5000);
-		WebElement datepick = Browser.findElementByPath(WebScriptConstants.DATE_PICKER);
-		List<WebElement> noOfColumns = datepick.findElements(By.tagName(WebScriptConstants.TD));
+		WebElement datepick = Browser.findElementByPath(BookaserviceWebScriptsConstants.DATE_PICKER);
+		List<WebElement> noOfColumns = datepick.findElements(By.tagName(BookaserviceWebScriptsConstants.TD));
 		// Loop will rotate till expected date not found.
 		for (WebElement cell : noOfColumns) {
 			// Select the date from date picker when condition match.
@@ -339,25 +340,25 @@ public class EventWebScripts {
 			
 		//Start time value setting
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.STARTTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.STARTTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getStart_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getStart_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getStart_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getStart_minute());
 			Thread.sleep(5000);
 			
 		//End time value setting	
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.ENDTIME_PICKER).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.ENDTIME_PICKER).click();
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-			Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getEnd_hour());
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getEnd_hour());
 			Thread.sleep(5000);
-			Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-			Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
-			Browser.findElementByPath(WebScriptConstants.WHO_IS_PARTICIPATING).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+			Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
+			Browser.findElementByPath(EventsWebScriptsConstants.WHO_IS_PARTICIPATING).click();
 			Thread.sleep(5000);
 
 			//Based on the input from excel to select whether staff/res/everyone
@@ -377,29 +378,29 @@ public class EventWebScripts {
 			if (Boolean.valueOf(eventGS.getEvent_Individual())) {
 				Browser.findElementByPath(".//*[@value='4']").click();
 				Thread.sleep(15000);
-				Browser.findElementByPath(WebScriptConstants.SEARCH_MEMBERS).click();
-				Browser.findElementByPath(WebScriptConstants.SEARCH_MEMBERS).sendKeys("Ben");
+				Browser.findElementByPath(EventsWebScriptsConstants.SEARCH_MEMBERS).click();
+				Browser.findElementByPath(EventsWebScriptsConstants.SEARCH_MEMBERS).sendKeys("Ben");
 				Thread.sleep(10000);
-				Browser.findElementByPath(WebScriptConstants.STAFF_SELECT).click();
-				Browser.findElementByPath(WebScriptConstants.SEARCH_MEMBERS).click();
-				Browser.findElementByPath(WebScriptConstants.SEARCH_MEMBERS).clear();
+				Browser.findElementByPath(EventsWebScriptsConstants.STAFF_SELECT).click();
+				Browser.findElementByPath(EventsWebScriptsConstants.SEARCH_MEMBERS).click();
+				Browser.findElementByPath(EventsWebScriptsConstants.SEARCH_MEMBERS).clear();
 				Thread.sleep(2000);
-				Browser.findElementByPath(WebScriptConstants.SEARCH_MEMBERS).sendKeys("Gan");
+				Browser.findElementByPath(EventsWebScriptsConstants.SEARCH_MEMBERS).sendKeys("Gan");
 				Thread.sleep(10000);
-				Browser.findElementByPath(WebScriptConstants.RESIDENT_SELECT).click();
-				Browser.findElementByPath(WebScriptConstants.SEARCH_MEMBERS).click();
+				Browser.findElementByPath(EventsWebScriptsConstants.RESIDENT_SELECT).click();
+				Browser.findElementByPath(EventsWebScriptsConstants.SEARCH_MEMBERS).click();
 				Thread.sleep(3000);
-				Browser.findElementByPath(WebScriptConstants.SEARCH_SAVE).click();
+				Browser.findElementByPath(EventsWebScriptsConstants.SEARCH_SAVE).click();
 				Thread.sleep(5000);
 				jsez.executeScript("scroll(0,100);");
 			}
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).click();
-			Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
 			
 			jsez.executeScript("scroll(0,-550);");
 			
-			Browser.findElementByPath(WebScriptConstants.EVENT_SAVE).click();
+			Browser.findElementByPath(EventsWebScriptsConstants.EVENT_SAVE).click();
 		
 	}
 	
@@ -409,9 +410,9 @@ public class EventWebScripts {
 	public void Editstaff_Event(EventWeb_Object eventwebobject, EventGS eventGS) throws InterruptedException
 	{
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.EVENTS).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.EVENTS).click();
 		Thread.sleep(15000);
-		Browser.findElementByPath(WebScriptConstants.MONTH_BUTTON).click();
+		Browser.findElementByPath(EventsWebScriptsConstants.MONTH_BUTTON).click();
 		Thread.sleep(15000);
 		//Scroll through the page till the date in month view
 		
@@ -419,24 +420,24 @@ public class EventWebScripts {
 		{
 			for(int j=1;j<8;j++)
 			{
-				System.out.println("Value is:"+Browser.findElementByPath(String.format(WebScriptConstants.CALENDAR,i,j)).getText());
+				System.out.println("Value is:"+Browser.findElementByPath(String.format(EventsWebScriptsConstants.CALENDAR,i,j)).getText());
 				
-				if(Browser.findElementByPath(String.format(WebScriptConstants.CALENDAR,i,j)).getText().equals(eventGS.getSelect_date()))
+				if(Browser.findElementByPath(String.format(EventsWebScriptsConstants.CALENDAR,i,j)).getText().equals(eventGS.getSelect_date()))
 				{
 					System.out.print("Inside If statement");
-					Browser.findElementByPath(String.format(WebScriptConstants.EVENT_SELECT,i,j)).click();
+					Browser.findElementByPath(String.format(EventsWebScriptsConstants.EVENT_SELECT,i,j)).click();
 					Thread.sleep(15000);
-					Browser.findElementByPath(WebScriptConstants.EDIT_EVENTBUTTON).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.EDIT_EVENTBUTTON).click();
 					//Value passing in Edit Event Screen
 					Thread.sleep(20000);
-					Browser.findElementByPath(WebScriptConstants.EVENT_NAME).click();
-					Browser.findElementByPath(WebScriptConstants.EVENT_NAME).clear();
-					Browser.findElementByPath(WebScriptConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
+					Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).clear();
+					Browser.findElementByPath(EventsWebScriptsConstants.EVENT_NAME).sendKeys(eventGS.getEventname());
 					Thread.sleep(10000);
-					Browser.findElementByPath(WebScriptConstants.EDIT_EVENTDATE).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.EDIT_EVENTDATE).click();
 					Thread.sleep(5000);
-					WebElement datepick = Browser.findElementByPath(WebScriptConstants.DATE_PICKER);
-					List<WebElement> noOfColumns = datepick.findElements(By.tagName(WebScriptConstants.TD));
+					WebElement datepick = Browser.findElementByPath(BookaserviceWebScriptsConstants.DATE_PICKER);
+					List<WebElement> noOfColumns = datepick.findElements(By.tagName(BookaserviceWebScriptsConstants.TD));
 					// Loop will rotate till expected date not found.
 					for (WebElement cell : noOfColumns) {
 						// Select the date from date picker when condition match.
@@ -448,33 +449,33 @@ public class EventWebScripts {
 							break;
 						} }
 					Thread.sleep(5000);	
-					Browser.findElementByPath(WebScriptConstants.STARTTIME_PICKER).click();
-					Browser.findElementByPath(WebScriptConstants.HOUR).click();
-					Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-					Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getStart_hour());
-					Browser.findElementByPath(WebScriptConstants.MINUTES).click();
-					Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-					Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getStart_minute());
-					Browser.findElementByPath(WebScriptConstants.ENDTIME_PICKER).click();
-					Browser.findElementByPath(WebScriptConstants.HOUR).click();
-					Browser.findElementByPath(WebScriptConstants.HOUR).clear();
-					Browser.findElementByPath(WebScriptConstants.HOUR).sendKeys(eventGS.getEnd_hour());
-					Browser.findElementByPath(WebScriptConstants.MINUTES).click();
-					Browser.findElementByPath(WebScriptConstants.MINUTES).clear();
-					Browser.findElementByPath(WebScriptConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
-					Browser.findElementByPath(WebScriptConstants.WHO_HAS_INVITED).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.STARTTIME_PICKER).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.HOUR).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+					Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getStart_hour());
+					Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+					Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getStart_minute());
+					Browser.findElementByPath(EventsWebScriptsConstants.ENDTIME_PICKER).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.HOUR).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.HOUR).clear();
+					Browser.findElementByPath(EventsWebScriptsConstants.HOUR).sendKeys(eventGS.getEnd_hour());
+					Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).clear();
+					Browser.findElementByPath(EventsWebScriptsConstants.MINUTES).sendKeys(eventGS.getEnd_minute());
+					Browser.findElementByPath(EventsWebScriptsConstants.WHO_HAS_INVITED).click();
 					Thread.sleep(5000);
-					Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).click();
-					Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).clear();
-					Browser.findElementByPath(WebScriptConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
-					Browser.findElementByPath(WebScriptConstants.WHO_HAS_INVITED).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).clear();
+					Browser.findElementByPath(EventsWebScriptsConstants.EVENT_DESCRIPTION).sendKeys(eventGS.getEvent_description());
+					Browser.findElementByPath(EventsWebScriptsConstants.WHO_HAS_INVITED).click();
 					Thread.sleep(2000);
 					JavascriptExecutor jsec = (JavascriptExecutor) Browser.driver;
 					jsec.executeScript("window.scrollBy(0,-550)", "");
 					Thread.sleep(5000);
-					Browser.findElementByPath(WebScriptConstants.EVENT_UPDATEBUTTON).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.EVENT_UPDATEBUTTON).click();
 					Thread.sleep(15000);
-					Browser.findElementByPath(WebScriptConstants.MONTH_BUTTON).click();
+					Browser.findElementByPath(EventsWebScriptsConstants.MONTH_BUTTON).click();
 					Thread.sleep(15000);
 					return;
 				}
