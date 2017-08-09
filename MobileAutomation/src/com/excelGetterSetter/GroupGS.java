@@ -7,8 +7,15 @@ public class GroupGS {
 	private String everyone;
 	private String only_Staff;
 	private String only_Residents;
+	private String feedPost;
 	
 	
+	public String getFeedPost() {
+		return feedPost;
+	}
+	public void setFeedPost(String feedPost) {
+		this.feedPost = feedPost;
+	}
 	public String getGroupName() {
 		return groupName;
 	}
